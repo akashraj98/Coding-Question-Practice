@@ -15,3 +15,6 @@ class Solution:
                 for j in range(n):
                     auxMatrix[j][i]=matrix[i][j]
             return auxMatrix
+        
+        # Time Complexity = O(n*m)
+        # Space Complexity = O(n*m)
