@@ -11,12 +11,13 @@ class Solution:
                     continue
                 if (val in col[c] or
                     val in row[r] or 
-                    val in squares[(r//3,c//3)]):
+                    val in squares[(r//3,c//3)]):  
                     return False
                 
                 col[c].add(val)
                 row[r].add(val)
-                squares[(r//3,c//3)].add(val)
+                squares[(r//3,c//3)].add(val) # using dictionary where 0,0 will
+                                              # key for first box and so on
         
         return True
         
