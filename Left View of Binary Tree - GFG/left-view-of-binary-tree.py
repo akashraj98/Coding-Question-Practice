@@ -15,7 +15,7 @@ import collections
 def LeftView(root):
     res =[]
     if not root:
-        return []
+        return res
     q = collections.deque()
     q.append(root)
     while q:
