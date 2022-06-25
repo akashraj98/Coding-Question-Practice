@@ -12,16 +12,16 @@ class Solution:
         res =[]
         while q:
             subl = []
-            nextlvl = []
+            # nextlvl = []
             for i in range(len(q)):
                 node=q.pop(0)
                 subl.append(node.val)
                 if node.left:
-                    nextlvl.append(node.left)
+                    q.append(node.left)
                 if node.right:
-                    nextlvl.append(node.right)
+                    q.append(node.right)
             res.append(subl)
-            q = nextlvl
+            # q = nextlvl
                     
             
         return res
