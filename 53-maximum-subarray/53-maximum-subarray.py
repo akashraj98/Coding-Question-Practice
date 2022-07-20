@@ -5,11 +5,9 @@ class Solution:
         m_sum = arr[0]
         start =0
         end =0
-        while end < n:
-            c_sum+=arr[end]
+        for i in range(n):
+            c_sum+=arr[i]
             m_sum = max(m_sum,c_sum)
-            if c_sum <0:
-                c_sum =0
-                start+=1
-            end+=1
+            if c_sum<0:
+                c_sum = 0
         return m_sum
