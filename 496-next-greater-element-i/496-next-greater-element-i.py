@@ -1,17 +1,36 @@
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        # O(m+n)
         res = [-1]*len(nums1)
         nums1indx = {n:i for i,n in enumerate(nums1)}
-        
-        for i in range(len(nums2)):
-            if nums2[i] not in nums1indx:
-                continue
-            for j in range(i,len(nums2)):
-                if nums2[j]> nums2[i]:
-                    indx = nums1indx[nums2[i]]
-                    res[indx] = nums2[j]
-                    break
+        stack = []
+        for elem in nums2:           
+            while stack and elem > stack[-1]:
+                index =nums1indx[stack.pop()]
+                res[index] = elem
+            if elem in nums1indx:
+                stack.append(elem)
+            
         return res
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        # Approach 2 O(m*n)
+        # for i in range(len(nums2)):
+        #     if nums2[i] not in nums1indx:
+        #         continue
+        #     for j in range(i,len(nums2)):
+        #         if nums2[j]> nums2[i]:
+        #             indx = nums1indx[nums2[i]]
+        #             res[indx] = nums2[j]
+        #             break
+        # return res
                     
 #         res =[]
 #         for i in range(len(nums1)):
