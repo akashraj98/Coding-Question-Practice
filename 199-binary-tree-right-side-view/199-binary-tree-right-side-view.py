@@ -12,6 +12,7 @@ class Solution:
         q = collections.deque()
         q.append(root)
         while q:
+            res.append(q[-1].val)
             sub = []
             for i in range(len(q)):
                 node=q.popleft()
@@ -21,7 +22,7 @@ class Solution:
                 if node.right:
                     q.append(node.right)
                     
-            res.append(sub[-1])
+            
         
         return res
         
