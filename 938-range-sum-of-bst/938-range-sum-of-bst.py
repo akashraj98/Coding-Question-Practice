@@ -4,16 +4,17 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-
 class Solution:
     def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
-        res = [] 
-        def dfs(root):
-            if root:
-                dfs(root.left)
-                if low <= root.val and root.val <= high:
-                    res.append(root.val)
-                dfs(root.right)
-
-        dfs(root)
-        return sum(res)
+        q = deque([root])
+        sm = 0
+        while q:
+            for i in range(len(q)):
+                node = q.popleft()
+                if low <= node.val and node.val <= high:
+                    sm+= node.val
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+        return sm
