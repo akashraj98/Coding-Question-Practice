@@ -9,10 +9,10 @@ class Solution:
         self.sum_ = 0
         def dfs(root):
             if root:
-                dfs(root.left)
+                if root.val > low: dfs(root.left)
                 if low <= root.val and root.val <= high:
                     self.sum_+= root.val
-                dfs(root.right)
+                if root.val < high: dfs(root.right)
         dfs(root)
         return self.sum_
         
