@@ -9,7 +9,8 @@ class Solution:
         def dfs(root):
             if root:
                 dfs(root.left)
-                self.curr.right = TreeNode(root.val)
+                root.left = None
+                self.curr.right = root
                 self.curr = self.curr.right
                 dfs(root.right)
         
