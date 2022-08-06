@@ -11,7 +11,7 @@ class Solution:
                 dfs(root.left)
                 root.left = None
                 self.curr.right = root
-                self.curr = self.curr.right
+                self.curr = self.curr.right # or root
                 dfs(root.right)
         
         dummy = self.curr = TreeNode()
