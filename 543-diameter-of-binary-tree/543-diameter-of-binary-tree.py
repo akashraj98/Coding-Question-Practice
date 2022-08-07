@@ -10,7 +10,10 @@ class Solution:
         def depth(root):
             if not root:
                 return -1
-            return 1 + max(depth(root.left),depth(root.right))
+            lp = depth(root.right)
+            rp = depth(root.left)
+            self.max_depth = max(2+lp+rp,lp,rp,self.max_depth)
+            return 1 + max(lp,rp)
         def dfs(root):
             if root:
                 lp = depth(root.right)
@@ -18,5 +21,5 @@ class Solution:
                 self.max_depth = max(2+lp+rp,lp,rp,self.max_depth)
                 dfs(root.left)
                 dfs(root.right)
-        dfs(root)
+        depth(root)
         return self.max_depth
