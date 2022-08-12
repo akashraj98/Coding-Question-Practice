@@ -1,14 +1,11 @@
-class Solution(object):
-    def nextGreaterElements(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
-        res = [-1]* len(nums)
+class Solution:
+    def nextGreaterElements(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        res = [-1]* n
         stack = []
-        for i in range(len(nums)) * 2:
-            while stack and nums[stack[-1]] < nums[i]:
+        for i in range(n*2):
+            while stack and nums[stack[-1]] < nums[i%n]:
                 index = stack.pop()
-                res[index] = nums[i]
-            stack.append(i)
+                res[index] = nums[i%n]
+            stack.append(i%n)
         return res
