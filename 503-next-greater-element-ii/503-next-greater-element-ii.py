@@ -3,9 +3,10 @@ class Solution:
         n = len(nums)
         res = [-1]* n
         stack = []
-        for i in range(n*2):
-            while stack and nums[stack[-1]] < nums[i%n]:
-                index = stack.pop()
-                res[index] = nums[i%n]
-            stack.append(i%n)
+        for _ in [0,1]:
+            for i in range(n):
+                while stack and nums[stack[-1]] < nums[i]:
+                    index = stack.pop()
+                    res[index] = nums[i]
+                stack.append(i)
         return res
