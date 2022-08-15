@@ -13,4 +13,4 @@ class Solution:
                 return True
             return self.hasPathSum(root.left,n_target) or self.hasPathSum(root.right,n_target)
                 
-        return False#True if targetSum ==0 else False
+        return False
