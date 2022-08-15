@@ -10,15 +10,14 @@ class Solution:
         q = deque([(root,0)])
         width = 0
         while q:
-            width = max(width,q[-1][1]- q[0][1] +1)
-            temp = []
-            for node,i in q:
+            width = max(width,q[-1][1]- q[0][1])
+            for i in range(len(q)):
+                node,i = q.popleft()
                 if node.left:
-                    temp.append((node.left,2*i+1))
+                    q.append((node.left,2*i+1))
                 if node.right:
-                    temp.append((node.right,2*i+2))
-            q = temp
+                    q.append((node.right,2*i+2))
                 
-        return width
+        return width+1
 
             
