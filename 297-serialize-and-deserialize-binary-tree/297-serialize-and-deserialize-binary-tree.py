@@ -36,10 +36,10 @@ class Codec:
                 c+=1
             elif data[i] == ")":
                 c-=1
-                if c == 0:
-                    root.left = self.deserialize(data[:i])
-                    root.right = self.deserialize(data[i+2:-1])
-                    return root
+            if c == 0:
+                root.left = self.deserialize(data[:i])
+                root.right = self.deserialize(data[i+2:-1])
+                return root
 
 # Your Codec object will be instantiated and called as such:
 # ser = Codec()
