@@ -14,6 +14,7 @@ class Solution:
                 self.c+=1
                 if k== self.c:
                     self.ans = root.val
+                    return
                 dfs(root.right)
         dfs(root)
         return self.ans
