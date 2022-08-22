@@ -2,14 +2,16 @@ import heapq
 class Solution:
     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
         i=0
-        res = []
+        minheap = []
         f_res = []
         for row in mat:
             ones=sum(row)
-            res.append((ones,i))  
+            heapq.heappush(minheap,(ones,i) )
+            # res.append((ones,i))  
             i+=1
-        res.sort()
+        # print(minheap)
         for i in range(k):
-            f_res.append(res[i][1])
+            one,index=heapq.heappop(minheap)
+            f_res.append(index)
         return f_res
         
