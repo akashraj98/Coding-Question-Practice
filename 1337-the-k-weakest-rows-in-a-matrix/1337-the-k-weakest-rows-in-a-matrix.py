@@ -7,9 +7,16 @@ class Solution:
         for row in mat:
             ones=sum(row)
             heapq.heappush(minheap,(ones,i) )
-            # res.append((ones,i))  
             i+=1
-        # print(minheap)
+            # if len(minheap)>k :
+            #     heapq.heappop(minheap)
+                
+        # minheap.sort(reverse = True ,key =lambda i :i[1] )
+        # while minheap:
+        #     one,index =heapq.heappop(minheap)
+        #     f_res.append(index)
+        # return f_res[::-1]
+
         for i in range(k):
             one,index=heapq.heappop(minheap)
             f_res.append(index)
