@@ -1,12 +1,16 @@
 class Solution:
     def nextGreaterElements(self, nums: List[int]) -> List[int]:
         n = len(nums)
-        res = [-1]* n
-        stack = []
-        # for _ in [0,1]:       # constant so it time complexity is O(n)
-        for i in range(2*n):
-            while stack and nums[stack[-1]] < nums[i%n]:
-                index = stack.pop()
-                res[index] = nums[i%n]
-            stack.append(i%n)
+        nums = nums+nums
+        res = []
+        for i in range(n):
+            found = 0
+            for j in range(i+1,len(nums)):
+                if nums[j]>nums[i]:
+                    found=1
+                    res.append(nums[j])
+                    break
+            if not found: res.append(-1)
         return res
+
+        
