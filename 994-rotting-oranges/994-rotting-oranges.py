@@ -6,7 +6,7 @@ class Solution:
             grid[i][j]=2
             q.appendleft((i,j,t+1))
             self.f_c-=1
-            return self.f_c
+
 
         m, n = len(grid), len(grid[0])
         self.f_c= 0
