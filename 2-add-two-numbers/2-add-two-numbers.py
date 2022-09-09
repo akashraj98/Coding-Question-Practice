@@ -9,29 +9,21 @@ class Solution:
         dummy = node = ListNode(0)
         while l1 and l2:
             q =l1.val+l2.val + carry
-            if q >=10:
-                carry, q = divmod(q,10)
-            else:
-                carry = 0
+            carry, q = divmod(q,10)
             node.next = ListNode(q)
             node = node.next
             l1 = l1.next
             l2 = l2.next
         while l1:
             q = l1.val+carry
-            if q >=10:
-                carry, q = divmod(q,10)
-            else:
-                carry = 0
+            carry, q = divmod(q,10)
             node.next = ListNode(q)
             node = node.next
             l1 = l1.next
+            
         while l2:
             q = l2.val+carry
-            if q >=10:
-                carry, q = divmod(q,10)
-            else:
-                carry = 0
+            carry, q = divmod(q,10)
             node.next = ListNode(q)
             node = node.next
             l2 = l2.next
