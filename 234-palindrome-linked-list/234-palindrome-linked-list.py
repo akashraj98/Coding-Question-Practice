@@ -19,13 +19,11 @@ class Solution:
             slow = slow.next
             curr.next = prev
             prev = curr
-
-            
-        end = prev
+        #end = prev
         for i in range(count):
-            if start.val == end.val:
+            if start.val == prev.val:
                 start=start.next
-                end = end.next
+                prev = prev.next
             else:
                 return False
         return True
