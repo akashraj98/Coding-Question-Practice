@@ -19,7 +19,7 @@ class Solution:
         dummy = dummyNode = ListNode(0,head)
         prev  = dummy
         dummy = dummy.next
-        isdup = False
+        
         while curr:
             if dummy.val != curr.val:
                 dummy.next = curr
@@ -27,13 +27,11 @@ class Solution:
                 dummy = dummy.next
                 curr = curr.next
             else:
-                isdup = True
+                #We found duplicate node
                 while curr and curr.val== dummy.val:
                     curr = curr.next
-                if isdup:
-                    prev.next = curr
-                    dummy = prev.next
-                isdup = not isdup
+                prev.next = curr
+                dummy = prev.next
                 if curr:
                     curr = curr.next
         return dummyNode.next
