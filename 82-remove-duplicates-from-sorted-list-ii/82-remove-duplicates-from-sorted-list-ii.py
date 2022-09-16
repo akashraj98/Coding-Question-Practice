@@ -7,11 +7,10 @@ class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head or not head.next:
             return head
-        #we can use a dummy node and a flag
-        #flag will check weather we have duplicate value
-        # if flag then seek till value is different
-        # remove end from dummy list
-        # change flag to 0
+        #we can use a dummy node 
+        # and prev pointer to remove last node if it is duplicate frm our dummy list
+        # if dummynodeval == currnode val: seek till they are different
+        # remove end from dummy list by using prev pointer
         # append the node with different value (it will be none if we have duplicate in end)
         # repeat till end of linked list
         
