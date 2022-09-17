@@ -4,8 +4,10 @@ class Solution:
         heapify(nums)
         for i in range(k):
             heappush(nums,heappop(nums)+1)
-        res =1
-        return reduce(lambda acc,n : acc*n%(10**9+7),nums)
+        # r = 1
+        # for num in nums: r = (r*num)%(10**9+7)
+        # return r
+        return reduce(lambda acc,n : (acc*n)%(10**9+7),nums)
         
             
         
