@@ -14,6 +14,7 @@ class Solution:
             if count == n:
                 prev = head
             curr = curr.next
+            
         if prev:
             prev.next = prev.next.next
         else:
