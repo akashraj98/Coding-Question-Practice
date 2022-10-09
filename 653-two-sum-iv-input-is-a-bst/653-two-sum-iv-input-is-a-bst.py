@@ -11,7 +11,6 @@ class Solution:
         def dfs(root):
             if root:
                 dfs(root.left)
-                # print(k-root.val)
                 if root.val not in self.dic:
                     self.dic.add(k-root.val)
                 else:
