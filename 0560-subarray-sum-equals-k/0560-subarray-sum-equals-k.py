@@ -21,15 +21,11 @@ class Solution:
                     
                 
         res = 0
-        prefixsum = 0
-        d = {0:1}
+        sm = 0
+        pre_map = {0:1}
         for num in nums:
-            prefixsum +=num
-            # diff = prefix-k
-            if prefixsum-k in d:
-                res += d[prefixsum-k]
-            if prefixsum not in d:
-                d[prefixsum] = 1
-            else:
-                d[prefixsum] = 1+ d[prefixsum]
+            sm+=num
+            if sm-k in pre_map:
+                res+=pre_map[sm-k]
+            pre_map[sm] = pre_map.get(sm,0)+1
         return res
