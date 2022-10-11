@@ -8,19 +8,20 @@ class Solution:
         #             count+=1
         # return count
         '''Implementing Sliding window solution'''
-        def helper(nums,goal):
-            if goal<0: return 0 # its not possible becouse bin no
-            res = cur_sum = 0
-            start = 0
+        def atMost(nums,goal):
+            if goal<0: 
+                return 0 
+            res = presum = 0
+            l = 0
             n = len(nums)
-            for end in range(n):
-                cur_sum+=nums[end]
-                while cur_sum > goal:
-                    cur_sum-=nums[start]
-                    start+=1
-                res += (end-start+1)
+            for r in range(n):
+                presum+=nums[r]
+                while presum > goal:
+                    presum-=nums[l]
+                    l+=1
+                res += (r-l+1)
             return res
-        return helper(nums,goal)-helper(nums,goal-1)
+        return atMost(nums,goal)-atMost(nums,goal-1)
         
         
         
