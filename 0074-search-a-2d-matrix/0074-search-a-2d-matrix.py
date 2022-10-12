@@ -2,10 +2,9 @@ class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         m = len(matrix)
         n = len(matrix[0])
-        i,j = [0,n-1]
+        i = 0
+        j = n-1 # we start fromtop right corner
         while i in range(0,m)  and j in range(0,n):
-            # ex = edge[0]
-            # ey = edge[1]
             if target < matrix[i][j]:
                 j -= 1
             elif target > matrix[i][j]:
