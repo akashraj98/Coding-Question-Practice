@@ -7,10 +7,10 @@ class Solution:
             return res
         for _ in range(numRows-2):
             last = res[-1]
-            new_Array = []
+            new_Array = [1]
             for i in range(len(last)-1):
                 new_Array.append(last[i]+last[i+1])
-            new_Array = [1]+new_Array+[1]
+            new_Array.append(1)
             res.append(new_Array)
         return res
             
