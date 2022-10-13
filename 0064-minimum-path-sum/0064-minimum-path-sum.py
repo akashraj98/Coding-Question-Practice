@@ -15,14 +15,14 @@ class Solution:
         return grid[m-1][n-1]
         
         
-        
+        # TODO: Need to debug this code
         # dp = [[-1]*(n) for _ in range(m)]
         # def countainPath(i,j,m,n,sm):
         #     if i == (m-1) and j == (n-1):
         #         return sm
-        #     if i>=m or j>=n:
+        #     elif i>=m or j>=n:
         #         return 999
-        #     if dp[i][j]!=-1:
+        #     elif dp[i][j]!=-1:
         #         return dp[i][j]
         #     else:
         #         sm1 =sm2 =sm
