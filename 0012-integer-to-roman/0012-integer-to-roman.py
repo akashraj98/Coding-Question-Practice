@@ -18,5 +18,5 @@ class Solution:
             prev = findPrev(num)
             prev_freq = num //prev
             num = num% prev
-            res = res+ hmap[prev]* prev_freq
+            res += hmap[prev]* prev_freq
         return res
