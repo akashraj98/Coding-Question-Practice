@@ -16,5 +16,5 @@ class Solution:
                     if isConnected[el][adj]:
                         if adj not in vis:
                             vis.add(adj)
-                            q.append(adj)
+                            q.appendleft(adj)
         return count
