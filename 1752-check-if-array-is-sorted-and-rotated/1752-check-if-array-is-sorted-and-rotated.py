@@ -6,7 +6,7 @@ class Solution:
                 inf+=1
             if inf>1:
                 return False
-
+        # if its sorted and rotated last can never be greater than first
         if nums[-1]>nums[0] and inf:
             return False
         return True
