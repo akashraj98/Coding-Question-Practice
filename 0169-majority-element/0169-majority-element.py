@@ -1,13 +1,9 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        h_map = {}
-        for num in nums:
-            if num in h_map:
-                h_map[num]+=1
-            else:
-                h_map[num]=1
-        for key,val in h_map.items():
-            print(val)
-            if val> len(nums)/2:
-                return key
-        
+        s_nums = sorted(nums)
+        if s_nums[0]== s_nums[len(nums)//2]:
+            return s_nums[0]
+        elif s_nums[-1] == s_nums[len(nums)//2]:
+            return s_nums[-1]
+        else:
+            return s_nums[len(nums)//2]
