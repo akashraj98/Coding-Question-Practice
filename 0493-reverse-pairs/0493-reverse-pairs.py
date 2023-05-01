@@ -7,10 +7,12 @@ class Solution:
             count=0
             i=0
             j=0
+            # the tricky part - updating the count of number of possible pairs
             for i in range(len(left)):
                 while j<len(right) and left[i]>right[j]*2:
                     j+=1
                 count+=j
+            # merge two sorted array
             i=0
             j=0
             while i<nl and j<nr:
