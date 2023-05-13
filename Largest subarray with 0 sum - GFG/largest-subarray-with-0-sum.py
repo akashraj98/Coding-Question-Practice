@@ -14,9 +14,6 @@ class Solution:
             elif pSum-k in dic:
                 length = i- dic[pSum-k]
                 maxLen = max(maxLen,length)
-            
-            # elif pSum in dic:
-            #     dic[pSum] = min(dic[pSum],i)
             else:
                 dic[pSum] = i
                 
