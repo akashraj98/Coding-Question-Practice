@@ -6,12 +6,14 @@
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
-        node_set = set()
-        while headA:
-            node_set.add(headA)
-            headA = headA.next
-        while headB:
-            if headB in node_set:
-                return headB
-            headB = headB.next
-        return None
+        pt1 = headA
+        pt2 = headB
+        # concept is if they are same length then they will meet somewhere
+        # if they are diff length then they will also colide sometime in feuture as
+        # relative positioning of pts will change since len of two arrays are diff
+        # due to diff length one wil scan loop faster than other
+        while pt1!=pt2:
+            pt1 = pt1.next if pt1 else headB
+            pt2 = pt2.next if pt2 else headA
+        return pt1
+        
