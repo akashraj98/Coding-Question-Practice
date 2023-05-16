@@ -16,15 +16,12 @@ class Solution:
                 while stack:
                     dummy.next = stack.pop()
                     dummy = dummy.next
-        if not stack:
-            dummy.next = None
-        while stack:
-            if len(stack)==1:
-                start = stack.pop()
-                dummy.next = start
-            else:   
-                node = stack.pop()
         
+        for node in stack:
+            dummy.next = node
+            dummy = dummy.next
+
+        dummy.next = None
         return dummyhead.next
                 
         
