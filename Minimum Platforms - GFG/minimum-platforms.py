@@ -13,10 +13,9 @@ class Solution:
         while i< n:
             if arr[i]>dep[j]:
                 j+=1
-                curr-=1
             else:
                 curr+=1
-                i+=1
+            i+=1
             max_c = max(curr,max_c)
         return max_c
         
