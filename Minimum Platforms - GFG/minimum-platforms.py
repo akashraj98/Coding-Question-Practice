@@ -10,12 +10,18 @@ class Solution:
         j=0
         curr = 1
         max_c = 1
-        while i< n:
+        # while i< n:
+        #     if arr[i]>dep[j]:
+        #         j+=1
+        #     else:
+        #         curr+=1
+        #     i+=1
+        #     max_c = max(curr,max_c)
+        for i in range(1,n):
             if arr[i]>dep[j]:
                 j+=1
             else:
                 curr+=1
-            i+=1
             max_c = max(curr,max_c)
         return max_c
         
