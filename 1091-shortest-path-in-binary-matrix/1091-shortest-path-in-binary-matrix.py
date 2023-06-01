@@ -1,5 +1,6 @@
 class Solution:
     def shortestPathBinaryMatrix(self,grid):
+        #just bfs
         n = len(grid)
         if grid[0][0] or grid[n-1][n-1]:
             return -1
