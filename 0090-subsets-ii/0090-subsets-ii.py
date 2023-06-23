@@ -3,7 +3,9 @@ class Solution:
         def backtrack(nums,subset,res):
             res.append(subset)
             for i in range(len(nums)):
-
+                # this is impoetant 
+                # we need to check duplicate with comparing with earlier 
+                # or else it will mail
                 if i>0 and nums[i]==nums[i-1]:
                     continue
                 
