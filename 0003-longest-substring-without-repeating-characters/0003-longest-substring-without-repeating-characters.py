@@ -1,16 +1,14 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        if not s: return 0
-        res = 1
-        i = 0
-        while i< len(s) and res+1<= len(s):
-            substring = s[i:i+res+1]
-            # print(substring)
-            if len(substring) == len(set(substring)) and len(substring)> res:
-                res+=1
-                i=0
+        #Use two pointer extend from right and shrink from left
+        #place both in start first
+        res = 0
+        l=0
+        for r in range(len(s)+1):
+            if len(s[l:r]) == len(set(s[l:r])):
+                res = max(res,r-l)
             else:
-                i+=1
+                l+=1
         return res
-                
-        
+            
+            
